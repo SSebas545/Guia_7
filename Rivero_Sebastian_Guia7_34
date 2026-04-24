@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char correo[256];
+    int i;
+    int Arroba = 0, Punto = 0;
+    printf("Ingrese correo: ");
+    scanf("%255s", correo);
+    for (i = 0; correo[i] != '\0'; i++)
+    {
+        if (correo[i] == '@') Arroba = 1;
+        if (correo[i] == '.') Punto = 1;
+    }
+    if (Arroba && Punto)
+    {
+        printf("Correo valido (verificacion basica)\n");
+    }
+    else
+    {
+        printf("Correo invalido\n");
+    }
+    return 0;
+}

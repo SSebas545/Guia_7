@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    int clave;
+    do
+    {
+        printf("Ingrese la clave numerica: ");
+        scanf("%d", &clave);
+    }
+    while (clave != 1234);
+    printf("Clave correcta\n");
+    return 0;
+}

@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char palabra[256];
+    int i, longitud, Palindromo = 1;
+    printf("Ingrese una palabra (sin espacios): ");
+    scanf("%255s", palabra);
+    longitud = strlen(palabra);
+    for (i = 0; i < longitud / 2; i++)
+    {
+        if (palabra[i] != palabra[longitud - 1 - i])
+        {
+            Palindromo = 0;
+            break;
+        }
+    }
+    if (Palindromo) printf("Es palindromo\n");
+    else printf("No es palindromo\n");
+    return 0;
+}

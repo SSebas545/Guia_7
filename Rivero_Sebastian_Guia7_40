@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char user[50], pass[50];
+    const char usuario_ok[] = "admin";
+    const char clave_ok[] = "1234";
+    int intentos = 0;
+    while (intentos < 3)
+    {
+        printf("Usuario: ");
+        scanf("%s", user);
+        printf("Contrasena: ");
+        scanf("%s", pass);
+        if (strcmp(user, usuario_ok) == 0 && strcmp(pass, clave_ok) == 0)
+        {
+            printf("Acceso concedido\n");
+            return 0;
+        }
+        else
+        {
+            intentos++;
+            printf("Credenciales incorrectas. Intento %d de 3\n", intentos);
+        }
+    }
+    printf("Cuenta bloqueada\n");
+    return 0;
+}

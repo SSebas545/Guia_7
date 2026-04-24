@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main()
+{
+    const int secreto = 42;
+    int intento;
+    int i;
+    printf("Adivine el numero secreto (5 intentos):\n");
+    for (i = 1; i <= 5; i++)
+    {
+        printf("Intento %d: ", i);
+        scanf("%d", &intento);
+        if (intento == secreto)
+        {
+            printf("Correcto! Ganaste\n");
+            return 0;
+        }
+        else
+        {
+            if (intento < secreto)
+            {
+                printf("El numero secreto es mayor\n");
+            }
+            else
+            {
+                printf("El numero secreto es menor\n");
+            }
+        }
+    }
+    printf("Se acabaron los intentos. El numero era %d\n", secreto);
+    return 0;
+}

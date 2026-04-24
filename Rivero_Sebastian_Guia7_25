@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main()
+{
+    int horas;
+    char tipo;
+    float total = 0;
+    printf("Simulador estacionamiento (horas 0 para terminar)\n");
+    while (1)
+    {
+        printf("Ingrese horas (entero) o 0 para terminar: ");
+        scanf("%d", &horas);
+        if (horas == 0)
+        {
+            break;
+        }
+        printf("Ingrese tipo de vehiculo (C=Carro, M=Moto, B=Bicicleta): ");
+        scanf(" %c", &tipo);
+        if (tipo == 'C' || tipo == 'c')
+        {
+            total = horas * 100;
+        }
+        else
+        {
+            if (tipo == 'M' || tipo == 'm')
+            {
+                total = horas * 50;
+            }
+            else
+            {
+                if (tipo == 'B' || tipo == 'b')
+                {
+                    total = horas * 10f;
+                }
+                else
+                {
+                    printf("Tipo invalido\n");
+                    continue;
+                }
+            }
+        }
+        printf("Total a pagar: $%.2f\n", total);
+    }
+    printf("Fin del simulador\n");
+    return 0;
+}

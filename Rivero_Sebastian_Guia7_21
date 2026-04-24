@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main()
+{
+    int N, i;
+    float nota, suma = 0, max = 0;
+    int aprobados = 0;
+    printf("Ingrese cantidad de alumnos: ");
+    scanf("%d", &N);
+    for (i = 0; i < N; i++)
+    {
+        do
+        {
+            printf("Ingrese nota %d (0-10): ", i + 1);
+            scanf("%f", &nota);
+        }
+        while (nota < 0 || nota > 10.0f);
+        suma += nota;
+        if (nota > max)
+        {
+            max = nota;
+        }
+        if (nota >= 6.0f)
+        {
+            aprobados++;
+        }
+    }
+    if (N > 0)
+    {
+        printf("Promedio: %.2f\n", suma / N);
+        printf("Nota mas alta: %.2f\n", max);
+        printf("Aprobados: %d\n", aprobados);
+    }
+    else
+    {
+        printf("No se ingresaron alumnos\n");
+    }
+    return 0;
+}

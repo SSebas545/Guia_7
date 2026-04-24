@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+    int monto;
+    int b1000, b500, b100;
+    printf("Ingrese monto (multiplo de 100): ");
+    scanf("%d", &monto);
+    if (monto < 0)
+    {
+        printf("Monto invalido\n");
+        return 0;
+    }
+    b1000 = monto / 1000;
+    monto = monto % 1000;
+    b500 = monto / 500;
+    monto = monto % 500;
+    b100 = monto / 100;
+    printf("Billetes 1000: %d, 500: %d, 100: %d\n", b1000, b500, b100);
+    return 0;
+}

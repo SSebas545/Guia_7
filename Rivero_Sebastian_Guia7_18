@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main()
+{
+    float radio, area;
+    const float PI = 3.1415926;
+    printf("Ingrese el radio del circulo: ");
+    scanf("%f", &radio);
+    area = PI * radio * radio;
+    printf("Area: %.4f\n", area);
+    return 0;
+}

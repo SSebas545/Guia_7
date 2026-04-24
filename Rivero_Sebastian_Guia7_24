@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main()
+{
+    int stock, opcion, cantidad;
+    printf("Ingrese stock inicial: ");
+    scanf("%d", &stock);
+    do
+    {
+        printf("Menu Stock:\n1. Vender\n2. Reponer\n3. Salir\nElija opcion: ");
+        scanf("%d", &opcion);
+        if (opcion == 1)
+        {
+            printf("Ingrese cantidad a vender: ");
+            scanf("%d", &cantidad);
+            if (cantidad <= stock && cantidad > 0)
+            {
+                stock -= cantidad;
+                printf("Venta realizada. Stock actual: %d\n", stock);
+            }
+            else
+            {
+                printf("Error: cantidad invalida o supera stock\n");
+            }
+        }
+        else
+        {
+            if (opcion == 2)
+            {
+                printf("Ingrese cantidad a reponer: ");
+                scanf("%d", &cantidad);
+                if (cantidad > 0)
+                {
+                    stock += cantidad;
+                    printf("Reposicion realizada. Stock actual: %d\n", stock);
+                }
+                else
+                {
+                    printf("Cantidad invalida\n");
+                }
+            }
+        }
+    }
+    while (opcion != 3);
+    printf("Fin del control de stock\n");
+    return 0;
+}

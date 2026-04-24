@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    int suma = 0;
+    printf("Ingrese numeros (0 para terminar):\n");
+    scanf("%d", &n);
+    while (n != 0)
+    {
+        suma += n;
+        scanf("%d", &n);
+    }
+    printf("Suma total: %d\n", suma);
+    return 0;
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    int inicio, fin, n, i;
+    printf("Ingrese numero inicio y numero fin (inicio <= fin): ");
+    scanf("%d %d", &inicio, &fin);
+    for (n = inicio; n <= fin; n++)
+    {
+        printf("Tabla del %d:\n", n);
+        for (i = 1; i <= 10; i++)
+        {
+            printf("%d x %d = %d\n", n, i, n * i);
+        }
+        printf("\n");
+    }
+    return 0;
+}

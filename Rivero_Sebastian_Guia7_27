@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    int i;
+    for (i = 1; i <= 5; i++)
+    {
+        float horas;
+        float pago;
+        printf("Empleado %d - Ingrese horas trabajadas: ", i);
+        scanf("%f", &horas);
+        if (horas <= 40)
+        {
+            pago = horas * 100;
+        }
+        else
+        {
+            pago = 40 * 100 + (horas - 40) * 200;
+        }
+        printf("Pago total empleado %d: $%.2f\n", i, pago);
+    }
+    return 0;
+}

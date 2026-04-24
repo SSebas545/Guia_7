@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main()
+{
+    float monto;
+    int menor = 0, entre = 0, mayor = 0;
+    printf("Ingrese montos de venta (0 para terminar):\n");
+    scanf("%f", &monto);
+    while (monto != 0)
+    {
+        if (monto < 1000)
+        {
+            menor++;
+        }
+        else
+        {
+            if (monto <= 5000)
+            {
+                entre++;
+            }
+            else
+            {
+                mayor++;
+            }
+        }
+        scanf("%f", &monto);
+    }
+    printf("Ventas < $1000: %d\n", menor);
+    printf("Ventas entre $1000 y $5000: %d\n", entre);
+    printf("Ventas > $5000: %d\n", mayor);
+    return 0;
+}

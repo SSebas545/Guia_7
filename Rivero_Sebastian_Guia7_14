@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main()
+{
+    float precio, total = 0;
+    printf("Ingrese precios (se suman hasta superar $1000):\n");
+    do
+    {
+        scanf("%f", &precio);
+        total += precio;
+    }
+    while (total <= 1000);
+    printf("Total acumulado: $%.2f\n", total);
+    return 0;
+}

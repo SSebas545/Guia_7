@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    char c;
+    printf("Ingrese caracteres (S para salir):\n");
+    do
+    {
+        scanf(" %c", &c);
+    }
+    while (c != 'S' && c != 's');
+    printf("Fin de la lectura\n");
+    return 0;
+}

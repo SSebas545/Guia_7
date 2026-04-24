@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{
+    int opcion;
+    float saldo = 50000;
+    do
+    {
+        printf("Menu:\n1. Ver saldo\n2. Retirar\n3. Salir\nElija una opcion: ");
+        scanf("%d", &opcion);
+        if (opcion == 1)
+        {
+            printf("Saldo: $%.2f\n", saldo);
+        }
+        else
+        {
+            if (opcion == 2)
+            {
+                float monto;
+                printf("Ingrese monto a retirar: ");
+                scanf("%f", &monto);
+                if (monto <= saldo && monto > 0.0)
+                {
+                    saldo -= monto;
+                    printf("Retiro exitoso. Saldo actual: $%.2f\n", saldo);
+                }
+                else
+                {
+                    printf("Operacion invalida\n");
+                }
+            }
+        }
+    }
+    while (opcion != 3);
+    printf("Gracias. Hasta luego.\n");
+    return 0;
+}

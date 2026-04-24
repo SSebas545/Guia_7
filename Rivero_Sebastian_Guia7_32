@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    char nombres[10][50];
+    float precios[10];
+    int i;
+    for (i = 0; i < 10; i++)
+    {
+        printf("Producto %d - Ingrese nombre (sin espacios): ", i + 1);
+        scanf("%49s", nombres[i]);
+        printf("Ingrese precio: ");
+        scanf("%f", &precios[i]);
+    }
+    int idxMax = 0, idxMin = 0;
+    for (i = 1; i < 10; i++)
+    {
+        if (precios[i] > precios[idxMax]) idxMax = i;
+        if (precios[i] < precios[idxMin]) idxMin = i;
+    }
+    printf("Producto mas caro: %s ($%.2f)\n", nombres[idxMax], precios[idxMax]);
+    printf("Producto mas barato: %s ($%.2f)\n", nombres[idxMin], precios[idxMin]);
+    return 0;
+}

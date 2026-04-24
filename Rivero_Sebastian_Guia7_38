@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{
+    float memoria = 0;
+    int opcion;
+    do
+    {
+        printf("Calculadora memoria: memoria=%.2f\n", memoria);
+        printf("1. Sumar  2. Restar  3. Multiplicar  4. Dividir  5. Limpiar memoria  6. Salir\nElija opcion: ");
+        scanf("%d", &opcion);
+        if (opcion >= 1 && opcion <= 4)
+        {
+            float valor;
+            printf("Ingrese valor: ");
+            scanf("%f", &valor);
+            if (opcion == 1) memoria += valor;
+            if (opcion == 2) memoria -= valor;
+            if (opcion == 3) memoria *= valor;
+            if (opcion == 4)
+            {
+                if (valor != 0) memoria /= valor;
+                else printf("Division por cero\n");
+            }
+        }
+        else
+        {
+            if (opcion == 5) memoria = 0;
+        }
+    }
+    while (opcion != 6);
+    printf("Saliendo. Memoria final: %.2f\n", memoria);
+    return 0;
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    char nombre[50];
+    float sueldo;
+    printf("Ingrese nombre del empleado: ");
+    scanf("%49s", nombre);
+    printf("Ingrese sueldo: ");
+    scanf("%f", &sueldo);
+    if (sueldo < 50000)
+    {
+        sueldo = sueldo * 1.10;
+    }
+    printf("Empleado: %s\nSueldo final: $%.2f\n", nombre, sueldo);
+    return 0;
+}

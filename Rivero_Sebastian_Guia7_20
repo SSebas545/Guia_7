@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+    char frase[256];
+    int i, vocales = 0;
+    printf("Ingrese una frase (sin espacios finales): ");
+    fgets(frase, sizeof(frase), stdin);
+    if (frase[0] == '\n')
+    {
+        fgets(frase, sizeof(frase), stdin);
+    }
+    for (i = 0; frase[i] != '\0'; i++)
+    {
+        char ch = tolower((unsigned char)frase[i]);
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+        {
+            vocales++;
+        }
+    }
+    printf("Cantidad de vocales: %d\n", vocales);
+    return 0;
+}
